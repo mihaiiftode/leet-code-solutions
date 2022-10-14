@@ -26,3 +26,16 @@ func max(a, b int) int {
 		return b
 	}
 }
+
+func rob1(nums []int) int {
+	memo := make([]int, len(nums)+1)
+
+	memo[0] = 0
+	memo[1] = nums[0]
+
+	for i := 1; i < len(nums); i++ {
+		memo[i+1] = max(memo[i-1]+nums[i], memo[i])
+	}
+
+	return memo[len(nums)]
+}
