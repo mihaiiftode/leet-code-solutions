@@ -23,7 +23,7 @@ func characterReplacement(s string, k int) int {
 			left++
 		}
 
-		longest = max(right-left+1, longest)
+		longest = max(right-starleft+1, longest)
 
 	}
 
